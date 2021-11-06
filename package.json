@@ -4,6 +4,8 @@
   "description": "Mente Clara, proyecto Web en torno a la salud mental.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,11 +13,7 @@
     "url": "git+https://github.com/SebasttianM/MenteClara.git"
   },
   "keywords": [
-    "Mental",
-    "Health",
-    "Social",
-    "Network",
-    "NodeJS"
+    "Mental"
   ],
   "author": "Sebastian V Marin @SebasttianM",
   "license": "ISC",
