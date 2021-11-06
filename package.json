@@ -1,0 +1,33 @@
+{
+  "name": "menteclara",
+  "version": "1.0.0",
+  "description": "Mente Clara, proyecto Web en torno a la salud mental.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebasttianM/MenteClara.git"
+  },
+  "keywords": [
+    "Mental",
+    "Health",
+    "Social",
+    "Network",
+    "NodeJS"
+  ],
+  "author": "Sebastian V Marin @SebasttianM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SebasttianM/MenteClara/issues"
+  },
+  "homepage": "https://github.com/SebasttianM/MenteClara#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13"
+  }
+}
