@@ -11,7 +11,7 @@ export const verifyToken = async (req,res,next) =>{
         const pase = jwt.verify(token,"secret") // A definer despues
         req.user = pase.email
         const datos = await pool.query('SELECT * FROM Person WHERE email= ? AND password = ?',[pase.email,pase.password])
-        if(datos.length < 0 ) return res.json('User no exist in my db')
+        if(datos.length < 0 ) return res.json('Usuario no existe')
 
     }catch(e){
         return res.status(403).json({message:"Este token es invalido"})
@@ -20,15 +20,13 @@ export const verifyToken = async (req,res,next) =>{
     next();
 }
 
-
+//Verificando Rol del usuario
 export const verifyRol = async(req,res,next) => {
     const row =  await pool.query('SELECT * FROM Person WHERE email = ?',[req.user])
     if(row.length > 0 ){
         if(row[0].type === 'U'){
             return res.status(403).json({message:"Prohibido"})
         }
-    }else{
-        return res.status(403).json({message : "No puedes"})
     }
-    next()
+    next();
 }
