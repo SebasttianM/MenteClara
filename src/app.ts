@@ -6,6 +6,7 @@ import { encryptPassword } from './libs/encrypt';
 //Importando rutas
 import userRoute from './routes/user.routes';
 import authRoute from './routes/auth.routes';
+import articleRoute from './routes/articles.routes'
 
 const app = express();
 const port = 3000;
@@ -27,3 +28,4 @@ app.listen(port, () => {
 
 app.use('/api/users',userRoute);
 app.use('/login',authRoute)
+app.use('/api/',articleRoute)
