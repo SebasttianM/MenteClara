@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './components/header/header.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
+import { ArtComponent } from './components/art/art.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ArticuloComponent
+    ArticuloComponent,
+    ArtComponent
   ],
   imports: [
     BrowserModule,
