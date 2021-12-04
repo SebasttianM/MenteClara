@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ArticuloComponent } from './components/articulo/articulo.component';
 import { ArtComponent } from './components/art/art.component';
+import { FormArticuloComponent } from './components/form-articulo/form-articulo.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ArtComponent } from './components/art/art.component';
     HeaderComponent,
     ArticuloComponent,
     ArtComponent,
+    FormArticuloComponent,
   ],
   imports: [
     BrowserModule,
