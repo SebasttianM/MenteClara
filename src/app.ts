@@ -1,6 +1,8 @@
 import express from 'express';
 import morgan from 'morgan'
 import { encryptPassword } from './libs/encrypt';
+import cors from 'cors';
+
 
 
 //Importando rutas
@@ -11,9 +13,12 @@ import articleRoute from './routes/articles.routes'
 const app = express();
 const port = 3000;
 
+
+app.use(cors())
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+
 
 
 app.get('/', async (req, res) => {

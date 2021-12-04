@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { articulosModel } from 'src/app/models/articulo.models';
+import { ArticuloService } from 'src/app/services/articulo.service';
 
 @Component({
   selector: 'app-art',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtComponent implements OnInit {
 
-  constructor() { }
+  public articulos: articulosModel[] = [];
 
-  ngOnInit(): void {
+  constructor(private articuloService:ArticuloService ) { }
+
+  async ngOnInit(): Promise<void> {
+    this.articulos = await this.articuloService.getArticulos();
+    console.log(this.articulos)
   }
 
 }

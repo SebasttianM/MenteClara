@@ -8,13 +8,6 @@ import pool from '../database'
 
 
 export async function addArticulos (req,res){
-    const { id } = req.params;
-    const articulos:any[] = await pool.query("SELECT * FROM articulos WHERE id = ?",id);
-    res.json(articulos)
-}
-
-
-export async function getArticuloById (req,res){
     const { titulo, categoria, descripcion, autor } = req.body;
     const articulo = {
         titulo,
@@ -25,6 +18,14 @@ export async function getArticuloById (req,res){
 
     await pool.query("INSERT INTO articulos set ?",articulo)
     res.json({message:'articulo agregado correctamente'})
+}
+
+
+export async function getArticuloById (req,res){
+    const { id } = req.params;
+    const articulos:any[] = await pool.query("SELECT * FROM articulos WHERE id = ?",id);
+    res.json(articulos)
+
 }
 
 
