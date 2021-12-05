@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mente Clara, proyecto Web en torno a la salud mental.",
   "main": "index.js",
+ 
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --config nodemon.json src/app.ts",
@@ -37,5 +38,8 @@
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
