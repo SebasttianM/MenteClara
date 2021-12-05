@@ -22,8 +22,7 @@ app.use(express.urlencoded({extended:false}));
 
 
 app.get('/', async (req, res) => {
-     var x = await encryptPassword("Yomando23");
-    res.json(x);
+    res.json("API REST MISIONTIC");
 });
 
 app.listen(port, () => {
