@@ -21,7 +21,6 @@ export async function iniciarSesion(req, res) {
 
 export async function registrarse(req, res) {
     const {
-        identification,
         firstname,
         lastname,
         email,
@@ -29,15 +28,9 @@ export async function registrarse(req, res) {
         password,
         phone,
     } = req.body;
-    const comprabandoIdentification = await pool.query('SELECT * FROM Person WHERE identification = ?', [identification]);
     const comprabandoEmail = await pool.query('SELECT * FROM Person WHERE email = ?', [email.toLowerCase()]);
     const comprabandoUser = await pool.query('SELECT * FROM Person WHERE user = ?', [user.toLowerCase()]);
     const comprabandoPhone = await pool.query('SELECT * FROM Person WHERE phone = ?', [phone]);
-
-
-    if (comprabandoIdentification.length > 0) {
-        return res.json({ message: "La cedula ya esta registrado" });
-    }
 
     if (comprabandoEmail.length > 0) {
         return res.json({ message: "El email ya esta en uso" });
@@ -54,12 +47,10 @@ export async function registrarse(req, res) {
 
     const passwordEncrypt = await encryptPassword(password)
     const newPerson = {
-        identification,
         firstname,
         lastname,
         user: user.toLowerCase(),
         phone,
-        type: 'U',
         email: email.toLowerCase(),
         password: passwordEncrypt,
     }
